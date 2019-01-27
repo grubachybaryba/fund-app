@@ -30,14 +30,24 @@ export default {
         legend: {
           enabled: false,
         },
+        xAxis: {
+          categories: []
+        },
         series: [{}]
       }
     }
   },
   methods: {
     processData(array) {
-      const processedData = array.map(obj => Object.values(obj).reverse())      
-      this.chartOptions.series = [{ data: processedData }]
+      const categories = array.map(obj => {
+        return (new Date(obj.Date)).getFullYear().toString()
+      })
+      const fundValues = array.map(obj => {
+        return obj.Value
+      })
+
+      this.chartOptions.series = [{ name: 'Performance', data: fundValues }]
+      this.chartOptions.xAxis.categories = categories
     }
   },
   watch: { 
