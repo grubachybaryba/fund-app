@@ -38,6 +38,7 @@ export default {
         })
         .then(resp => {
           this.funds = resp
+          console.log(resp)
         })
         .catch(error => console.log("An error occured: ", error))
     }

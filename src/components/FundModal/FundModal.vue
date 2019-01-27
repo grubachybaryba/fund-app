@@ -2,11 +2,11 @@
   <div class="Modal" :class="{ 'is-active': active }">
     <div v-if="fund">
       <h2>{{ fund.Name }}</h2>
-      <p>Maybe some details</p>
+      <p>Risk level: {{ fund.RiskLevel }}</p>
       <h3>Performance history:</h3>
-      <LineChart/>
+      <LineChart :performance="fund.Performance" />
       <h3>Country allocation:</h3>
-      <PieChart/>
+      <PieChart :countries="fund.AllocationCountry" />
       <button @click.prevent="active = false">Close modal</button>
     </div>
   </div>
