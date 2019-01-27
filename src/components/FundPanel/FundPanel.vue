@@ -2,25 +2,20 @@
   <main>
     <section>
         <h2>Choose your magnificent fund:</h2>
-        <ul v-if="funds.length">
-          <FundItem v-for="fund in funds" :key="fund._id" :name="fund.value.Name"/>
-        </ul>
-        <p v-else>
-          Ooops, there are no funds!
-        </p> 
+        <FundList :funds="funds" />
     </section>
     <FundModal />  
   </main>
 </template>
 
 <script>
-import FundItem from './FundItem.vue'
+import FundList from './FundList.vue'
 import FundModal from '../FundModal/FundModal.vue'
 
 export default {
-  name: 'FundList',
+  name: 'FundPanel',
   components: {
-    FundItem,
+    FundList,
     FundModal
   },
   data() {
@@ -43,7 +38,6 @@ export default {
         })
         .then(resp => {
           this.funds = resp
-          console.log(resp)
         })
         .catch(error => console.log("An error occured: ", error))
     }

@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <AppHeader/>
-    <FundList/>
+    <FundPanel/>
     <AppFooter/>
   </div>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
-import FundList from './components/FundList/FundList.vue'
+import FundPanel from './components/FundPanel/FundPanel.vue'
 import AppFooter from './components/AppFooter.vue'
 
 export default {
   name: 'app',
   components: {
     AppHeader,
-    FundList,
+    FundPanel,
     AppFooter
   }
 }
