@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <highcharts :options="chartOptions"></highcharts>
-  </div>
+  <highcharts :options="chartOptions"></highcharts>
 </template>
 
 <script>
