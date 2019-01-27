@@ -1,10 +1,16 @@
 <template>  
-    <li>Perfect fund</li>
+    <li>{{ name }}</li>
 </template>
 
 <script>
 export default {
-  name: 'FundItem'  
+  name: 'FundItem',
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  }  
 }
 </script>
 
