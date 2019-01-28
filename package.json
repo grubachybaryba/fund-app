@@ -10,7 +10,8 @@
   "dependencies": {
     "highcharts": "^7.0.2",
     "highcharts-vue": "^1.2.0",
-    "vue": "^2.5.21"
+    "vue": "^2.5.21",
+    "vue-simple-spinner": "^1.2.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

@@ -3,6 +3,11 @@
     <section class="u-wrapper">
       <h2>Choose your magnificent fund:</h2>
       <FundList :funds="funds" v-if="!loading" />
+      <div class="spinner" v-else>
+        <vue-simple-spinner         
+        line-fg-color="#ff6468"
+        line-size="10" />
+      </div>      
     </section>
     <FundModal />  
   </main>
@@ -11,12 +16,14 @@
 <script>
 import FundList from './FundList.vue'
 import FundModal from '../FundModal/FundModal.vue'
+import VueSimpleSpinner from 'vue-simple-spinner'
 
 export default {
   name: 'FundPanel',
   components: {
     FundList,
-    FundModal
+    FundModal,
+    VueSimpleSpinner
   },
   data() {
     return {
@@ -50,6 +57,10 @@ export default {
 
 <style scoped lang="scss">
   @import '../../assets/helpers.scss';
+
+  .spinner {
+    margin: $s-lg;
+  }
 
   main {
     @include media(tablet-portrait-up) {
