@@ -1,5 +1,40 @@
-$c-primary: #3baa98;
-$c-background: #030077;
-$c-text: #2c3e50;
+// colors
+$c-primary: #ff6468;
+$c-secondary: #313131;
 
-$container-width: 800px;
+// widths
+$wrapper-width: 800px;
+
+// spacing
+$s-xs: 10px;
+$s-sm: 20px;
+$s-md: 30px;
+$s-lg: 60px;
+$s-xl: 80px;
+$s-xxl: 100px;
+
+// media query breakpoints
+@mixin media($size) {
+    @if $size == phone-only {
+        @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) { @content; }
+    }
+}
+
+// resets
+%btn-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    line-height: normal;
+}
