@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer>
     <div class="u-wrapper">
       <p>Made with &#9829; in Białystok, Poland</p>
     </div>
@@ -15,7 +15,7 @@ export default {
 <style scoped lang="scss">
   @import '../assets/helpers.scss';
 
-  .footer {
+  footer {
     background-color: $c-secondary;
     color: #ffffff; 
     box-shadow: 0 50vh 0 50vh $c-secondary; // extending footer to the bottom of the page if needed  

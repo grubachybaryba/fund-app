@@ -45,5 +45,9 @@ export default {
       margin: 0 auto;
       padding: $s-md 0;
     }
+
+    @include media(desktop-up) {
+      padding: ($s-md*1.2) 0;
+    }
   }
 </style>

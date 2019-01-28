@@ -47,4 +47,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '../../assets/helpers.scss';
+
+  main {
+    @include media(tablet-portrait-up) {
+      padding-bottom: $s-xxl;
+    }
+  }  
 </style>
