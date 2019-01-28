@@ -17,7 +17,8 @@ export default {
 
   .footer {
     background-color: $c-secondary;
-    color: #ffffff;    
+    color: #ffffff; 
+    box-shadow: 0 50vh 0 50vh $c-secondary; // extending footer to the bottom of the page if needed  
 
     @include media(tablet-portrait-up) {
       position: fixed;

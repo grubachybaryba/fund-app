@@ -25,4 +25,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '../../assets/helpers.scss';
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: ($s-md*1.3) 0 $s-sm 0; 
+  }
 </style>

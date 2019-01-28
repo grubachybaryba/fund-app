@@ -1,8 +1,8 @@
 <template>
   <main>
-    <section>
-        <h2>Choose your magnificent fund:</h2>
-        <FundList :funds="funds" />
+    <section class="u-wrapper">
+      <h2>Choose your magnificent fund:</h2>
+      <FundList :funds="funds" />
     </section>
     <FundModal />  
   </main>

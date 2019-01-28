@@ -31,6 +31,7 @@ export default {
 
   h1 {
     font-size: 60px;
+    font-weight: 900;
     margin: $s-lg 0 $s-xs 0;
   }
 
