@@ -6,7 +6,7 @@
       <div class="spinner" v-else>
         <vue-simple-spinner         
         line-fg-color="#ff6468"
-        line-size="10" />
+        :line-size="10" />
       </div>      
     </section>
     <FundModal />  
@@ -64,7 +64,7 @@ export default {
 
   main {
     @include media(tablet-portrait-up) {
-      padding-bottom: $s-xxl;
+      padding-bottom: $s-xl;
     }
   }  
 </style>

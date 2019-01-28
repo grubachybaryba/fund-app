@@ -24,6 +24,13 @@ export default {
       position: fixed;
       bottom: 0;
       width: 100%;
+      opacity: 0.9;
+    }
+  }
+
+  .u-wrapper {
+    @include media(desktop-up) {
+      padding: $s-md 0;
     }
   }
 

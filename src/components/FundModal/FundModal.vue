@@ -39,13 +39,13 @@ export default {
   },
   methods: {
     show() {
-      this.active = true;
+      this.active = true
     }
   },
   created() {
     this.$root.$on('toggleModal', (fund) => {
-      this.fund = fund;
-      this.show();
+      this.fund = fund
+      this.show()
     });
   }    
 }
@@ -84,7 +84,7 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        max-width: 1100px;
+        max-width: 1000px;
         max-height: 85vh;
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, .33);

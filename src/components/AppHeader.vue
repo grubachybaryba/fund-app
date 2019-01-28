@@ -26,20 +26,13 @@ export default {
      rgba(255, 130, 81, 0.9) 75%,
      rgba(255, 168, 29, 0.9) 100%);
     min-height: 250px;
-    color: #ffffff;
-
-    @include media(desktop-up) {
-      min-height: 300px;
-    }
+    color: #ffffff;    
   }
 
   h1 {
     font-size: 60px;
     font-weight: 900;
-    margin: $s-lg 0 $s-xs 0;
-    @include media(desktop-up) {
-      margin-top: ($s-xxl*0.9);
-    }
+    margin: $s-lg 0 $s-xs 0;    
   }
 
   p {
