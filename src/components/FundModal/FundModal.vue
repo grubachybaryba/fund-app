@@ -121,17 +121,23 @@ export default {
       @extend %btn-reset;
       font-size: 30px;
       line-height: 30px;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       color: $c-primary;
       position: absolute;
-      top: $s-xs;
-      right: $s-xs;
+      top: ($s-xs*0.5);
+      right: ($s-xs*0.5);
       transition: transform 1s ease;
       cursor: pointer;
       
       &:hover {
         transform: rotate(360deg);
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px dashed $c-primary;
+        border-radius: 50%;
       }
 
       @include media(tablet-portrait-up) {
