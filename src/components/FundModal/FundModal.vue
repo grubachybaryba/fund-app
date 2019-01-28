@@ -3,17 +3,19 @@
     <div class="modal__mask">
       <div class="modal__container" v-if="fund">
           <h2>{{ fund.Name }}</h2>
-          <h3>Performance history:</h3>
-          <div class="modal__chart">
-            <LineChart :performance="fund.Performance" />
-          </div>
-          <h3>Country allocation:</h3>
-          <div class="modal__chart">
-            <PieChart :countries="fund.AllocationCountry" />
-          </div>
-          <button @click.prevent="active = false" class="modal__button" aria-label="close modal">
-            &#10006;
-          </button>
+          <div class="modal__chartWrap">
+            <div class="modal__chart">
+              <h3>Performance history:</h3>
+              <LineChart :performance="fund.Performance" />
+            </div>          
+            <div class="modal__chart">
+              <h3>Country allocation:</h3>
+              <PieChart :countries="fund.AllocationCountry" />
+            </div>
+          </div>        
+        <button @click.prevent="active = false" class="modal__button" aria-label="close modal">
+          &#10006;
+        </button>
       </div>        
     </div>    
   </div>
@@ -64,29 +66,55 @@ export default {
     }    
 
     &__container {
-      // position: relative;
-      // width: 100%;
       max-width: 100vw;
       max-height: 100vh;
       overflow: auto;
-      // margin: 0px auto;
       padding: $s-md;
-      background-color: #fff;
-      // border-radius: 2px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+      background-color: #ffffff;
+      box-shadow: 0 50vh 0 50vh #ffffff; // extending element to the bottom of the page if needed  
       transition: all .3s ease;
 
       @include media(tablet-portrait-up) {
-        padding: $s-lg;
+        padding: ($s-lg*0.8) $s-lg;
+      }
+
+      @include media(desktop-up) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1100px;
+        max-height: 85vh;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
       }
     }
 
-    h2 {
-      margin-bottom: $s-md;
+    &__chartWrap {
+      margin-top: $s-md;
+      @include media(desktop-up) {
+        display: flex;
+      }
     }
 
     &__chart {
       margin: $s-md 0;
+
+      @include media(tablet-portrait-up) {
+        margin: $s-lg 0 $s-xl;
+      }
+
+      @include media(desktop-up) {
+        margin: 0 0 $s-md 0;
+        flex-grow: 1;
+      }
+    }
+
+    h3 {
+      @include media(desktop-up) {
+        margin-bottom: $s-lg;
+      }
     }
 
     &__button {
@@ -97,13 +125,18 @@ export default {
       height: 30px;
       color: $c-primary;
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: $s-xs;
+      right: $s-xs;
       transition: transform 1s ease;
       cursor: pointer;
       
       &:hover {
         transform: rotate(360deg);
+      }
+
+      @include media(tablet-portrait-up) {
+        top: $s-md;
+        right: $s-md;
       }
     }    
   }

@@ -37,8 +37,8 @@ export default {
               },
               showInLegend: true
           }
-        }, 
-        series: [{}]
+        },        
+        series: [{}],        
       }
     }
   },
@@ -64,6 +64,3 @@ export default {
   }  
 }
 </script>
-
-<style scoped lang="scss">
-</style>
