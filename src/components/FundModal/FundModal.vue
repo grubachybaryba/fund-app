@@ -4,10 +4,15 @@
       <div class="modal__container" v-if="fund">
           <h2>{{ fund.Name }}</h2>
           <h3>Performance history:</h3>
-          <LineChart :performance="fund.Performance" />
+          <div class="modal__chart">
+            <LineChart :performance="fund.Performance" />
+          </div>
           <h3>Country allocation:</h3>
-          <PieChart :countries="fund.AllocationCountry" />
+          <div class="modal__chart">
+            <PieChart :countries="fund.AllocationCountry" />
+          </div>
           <button @click.prevent="active = false" class="modal__button" aria-label="close modal">
+            &#10006;
           </button>
       </div>        
     </div>    
@@ -45,6 +50,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '../../assets/helpers.scss';
+
   .modal {
     &__mask {
       position: fixed;
@@ -54,53 +61,37 @@ export default {
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, .5);
-      display: table;
-      transition: opacity .3s ease;
     }    
 
     &__container {
-      position: relative;
-      width: 100%;
-      max-width: 80vw;
-      max-height: 85vh;
+      // position: relative;
+      // width: 100%;
+      max-width: 100vw;
+      max-height: 100vh;
       overflow: auto;
-      margin: 0px auto;
+      // margin: 0px auto;
       padding: 20px 30px;
       background-color: #fff;
-      border-radius: 2px;
+      // border-radius: 2px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
       transition: all .3s ease;
     }
 
     &__button {
-      width: 40px;
-      height: 40px;
+      @extend %btn-reset;
+      font-size: 30px;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      color: $c-primary;
       position: absolute;
       top: 10px;
       right: 10px;
-
-      &:before, &:after {
-        content:'';
-        position:absolute;
-        width:36px;
-        height:4px;
-        background-color: black;
-        border-radius:2px;
-        top:16px;
-        box-shadow:0 0 2px 0 #ccc;
-      }
-
-      &:before {
-          -webkit-transform:rotate(45deg);
-          -moz-transform:rotate(45deg);
-          transform:rotate(45deg);
-          left:2px;
-      }
-      &:after {
-          -webkit-transform:rotate(-45deg);
-          -moz-transform:rotate(-45deg);
-          transform:rotate(-45deg);
-          right:2px;
+      transition: transform 1s ease;
+      cursor: pointer;
+      
+      &:hover {
+        transform: rotate(360deg);
       }
     }    
   }
