@@ -2,7 +2,7 @@
   <main>
     <section class="u-wrapper">
       <h2>Choose your magnificent fund:</h2>
-      <FundList :funds="funds" />
+      <FundList :funds="funds" v-if="!loading" />
     </section>
     <FundModal />  
   </main>
@@ -20,6 +20,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       funds: []
     }
   },
@@ -28,8 +29,10 @@ export default {
   },
   methods: {
     fetchData: function () {
+      this.loading = true
       fetch('https://api.myjson.com/bins/jpp6w')
         .then(resp => {
+          this.loading = false
           if (resp.ok) {
             return resp.json()
           } else {
@@ -38,7 +41,6 @@ export default {
         })
         .then(resp => {
           this.funds = resp
-          console.log(resp)
         })
         .catch(error => console.log("An error occured: ", error))
     }
